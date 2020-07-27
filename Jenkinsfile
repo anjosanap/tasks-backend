@@ -59,5 +59,11 @@ pipeline {
                 }
             }
         }
+        stage ('Deploy Produção') {
+            steps {
+                bat 'docker-compose build'
+                bat 'docker-compose up -d'
+            }
+        }
     }
 }
